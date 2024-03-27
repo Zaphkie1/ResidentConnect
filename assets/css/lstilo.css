@@ -3,6 +3,7 @@
     --invalid: hsl(10 80% 40%);
     --input: hsl(0 0% 0%);
 }
+
 body {
     min-height: 100vh;
     display: flex;
@@ -12,6 +13,7 @@ body {
     background-color: hsl(0 0% 6%);
     color: hsl(0 0% 98%);
 }
+
 .form-group {
     --active: 0;
     container-type: inline-size;
@@ -21,15 +23,14 @@ body {
 form {
     width: 40ch;
 }
+
 input {
     --is-valid: 0;
     --is-invalid: 0;
     background: linear-gradient(var(--input), var(--input)) padding-box,
-    linear-gradient(var(--invalid), var(--invalid))
-    calc((1 - var(--is-invalid)) * -100cqi) 0 / 100% 100% border-box,
-    linear-gradient(var(--valid), var(--valid))
-    calc((1 - var(--is-valid)) * 100cqi) 0 / 100% 100% border-box,
-    var(--input);
+        linear-gradient(var(--invalid), var(--invalid)) calc((1 - var(--is-invalid)) * -100cqi) 0 / 100% 100% border-box,
+        linear-gradient(var(--valid), var(--valid)) calc((1 - var(--is-valid)) * 100cqi) 0 / 100% 100% border-box,
+        var(--input);
     border: 2px solid transparent;
     font-size: 1rem;
     background-repeat: no-repeat;
@@ -65,11 +66,13 @@ input:invalid:not(:placeholder-shown):not(:focus-visible) {
 input:valid {
     --is-valid: 1;
 }
+
 @media (prefers-reduced-motion: no-preference) {
     input {
         transition: background-position 0.5s;
     }
 }
+
 .submitbtn {
     background: #2a292c;
     border: 0;
@@ -81,10 +84,12 @@ input:valid {
     cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
+
 .submitbtn:hover {
     background: #404949;
 }
-h1{
+
+h1 {
     display: flex;
     align-items: center;
     justify-content: center;
